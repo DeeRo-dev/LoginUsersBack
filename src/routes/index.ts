@@ -5,7 +5,7 @@ import { getUser } from '../controllers/Users/getUser.ts';
 const router = express.Router();
 
 router.get('/',  getUser);
-router.get('/login', registerUser)
+router.put('/login', registerUser)
 
 
 export default router;

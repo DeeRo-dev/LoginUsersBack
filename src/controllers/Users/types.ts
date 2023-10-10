@@ -1,5 +1,4 @@
 
-
 export interface User {
     id: number,
     name: string,
@@ -7,5 +6,5 @@ export interface User {
     password: string,
     address: string,
     telephone: number,
-    pais: string,
+    country: string,
 }
