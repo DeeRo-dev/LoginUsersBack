@@ -6,6 +6,7 @@
 
   "scripts": {
     "dev": "tsnd --respawn --clear src/app.ts",
+    "lint": "ts-standard",
     "build": "rimraf .dist && tsc",
     "start": "npm run build && node dist/app.js"
   },
@@ -23,5 +24,11 @@
     "dotenv": "^16.3.1",
     "env-var": "^7.4.1",
     "express": "^4.18.2"
+  },
+  "eslintConfig": {
+    "parserOptions": {
+      "project": "./tsconfig.json"
+    },
+    "extends": ["./node_modules/ts-standard/eslintrc.json"]
   }
 }
