@@ -1,14 +1,19 @@
 import { Sequelize } from 'sequelize-typescript';
+import { config } from 'dotenv';
+config();
 
+// interface EnvVars {
+//   NAME_DB_USER?: string;
+//   NAME_DB?: string;
+//   CLAVE_DB_USER?: string;
+// }
 
+// Verifica que las propiedades esperadas estén presentes en process.env
+if (!process.env.NAME_DB_USER || !process.env.NAME_DB || !process.env.CLAVE_DB_USER) {
+  throw new Error('Faltan variables de entorno necesarias');
+}
 
-const sequelize = new Sequelize({
-  database: 'nombre_de_tu_db',
-  username: 'tu_usuario',
-  password: 'tu_contraseña',
+export const sequelize = new Sequelize(process.env.NAME_DB_USER, process.env.NAME_DB, process.env.CLAVE_DB_USER, {
   host: 'localhost', // o la dirección de tu servidor PostgreSQL
   dialect: 'postgres',
-  models: [__dirname + '/models'], // Directorio donde se encuentran tus modelos
 });
-
-export default sequelize;
