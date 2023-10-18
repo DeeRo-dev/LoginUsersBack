@@ -8,8 +8,8 @@ dotenv.config();
 
 const app = express();
 
-
 const port = process.env.PORT || 3000;
+
 async function main() {
     try {
         await sequelize.authenticate();
