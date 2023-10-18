@@ -1,17 +1,6 @@
 import { Table, Model, Column, DataType} from 'sequelize-typescript';
+import { UserAttributes, UserCreationAttributes } from '../Interfaces/UserInterface';
 
-interface UserAttributes {
-    id: number;
-    name: string;
-    lastname: string;
-    email: string;
-    password: string;
-    country: string;
-    address: string;
-    telephone: number;
-  }
-
-  interface UserCreationAttributes extends Omit<UserAttributes, 'id'> {}
 
 @Table({
     timestamps: false,
