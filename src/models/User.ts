@@ -4,7 +4,8 @@ import { UserAttributes, UserCreationAttributes } from '../Interfaces/UserInterf
 
 @Table({
     timestamps: false,
-    tableName: 'users'
+    tableName: 'users',
+    modelName: 'User'
 })
 
 class User extends Model<UserAttributes, UserCreationAttributes> {
@@ -14,37 +15,43 @@ class User extends Model<UserAttributes, UserCreationAttributes> {
         allowNull: false,
      })
      nombre!: string;
+
      @Column({
         type: DataType.STRING,
         allowNull: false,
      })
      lastname!: string;
+
      @Column({
         type: DataType.STRING,
         allowNull: false,
      })
      email!: string;
+
      @Column({
         type: DataType.STRING,
         allowNull: false,
      })
      password!: string;
+
      @Column({
         type: DataType.STRING,
         allowNull: false,
      })
      country!: string;
+
      @Column({
         type: DataType.STRING,
         allowNull: false,
      })
      address!: string;
+     
      @Column({
-        type: DataType.STRING,
+        type: DataType.INTEGER,
         allowNull: false,
      })
      telephone!: number;
 }
 
 
-export default User;
+ export default User;
