@@ -14,7 +14,7 @@ class User extends Model<UserAttributes, UserCreationAttributes> {
         type: DataType.STRING,
         allowNull: false,
      })
-     nombre!: string;
+     name!: string;
 
      @Column({
         type: DataType.STRING,
